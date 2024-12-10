@@ -11,8 +11,8 @@ pipeline {
             }
             steges{
                 stage("Build - Instalacion dependencias"){
-                steps{
-                    sh 'npm install'
+                    steps{
+                        sh 'npm install'
                     }
                 }
                 stage("Build - Build del proyecto"){
