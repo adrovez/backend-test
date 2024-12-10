@@ -28,7 +28,15 @@ export function validarRUT(rut: string): boolean {
     }
 
     const resto = suma % 11;
-    const digitoCalculado = 11 - resto === 10 ? 'K' : 11 - resto === 11 ? '0' : String(11 - resto);
+    let digitoCalculado;
+
+    if (11 - resto === 10) {
+        digitoCalculado = 'K';
+    } else if (11 - resto === 11) {
+        digitoCalculado = '0';
+    } else {
+        digitoCalculado = String(11 - resto);
+    }
 
     // Comparar el dígito verificador calculado con el ingresado
     return digitoCalculado === digitoVerificador;
